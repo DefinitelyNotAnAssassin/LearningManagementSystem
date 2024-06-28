@@ -1,0 +1,157 @@
+{% extends 'UserAuthentication/base/base.html' %}
+
+{% block content %}
+<div class="flex flex-col md:flex-row items-center h-screen">
+    <div class="flex h-full bg-white md:w-1/2 rounded mt-6 mb-8 mb-4 justify-center items-center">
+        
+        <form action="{% url 'register' %}" method = "post" hx-push-url="true" hx-target="body" class="w-full md:w-3/4 items-center md:p-20" autocomplete="off" onsubmit="return validateForm()">
+            <h2 class="text-2xl font-bold mt-6 text-center">User Registration</h2>
+
+            {% csrf_token %}
+
+     
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <ul id = "errorList" class = "text-red-500">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+
+            {% endif %}
+
+            
+
+            <div class="mb-4">
+                {% for field in form %}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {% if field.name == 'password' %}
+                        <div class="password-wrapper relative">
+                            <input type="password" placeholder="Password" name="{{field.name}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10" id="id_password" />
+                            <svg onclick = "showPassword(this)" id = "password_hidden" class="absolute top-1/2 right-2 mt-1  -translate-y-1/2 h-8 w-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M2.99902 3L20.999 21M9.8433 9.91364C9.32066 10.4536 8.99902 11.1892 8.99902 12C8.99902 13.6569 10.3422 15 11.999 15C12.8215 15 13.5667 14.669 14.1086 14.133M6.49902 6.64715C4.59972 7.90034 3.15305 9.78394 2.45703 12C3.73128 16.0571 7.52159 19 11.9992 19C13.9881 19 15.8414 18.4194 17.3988 17.4184M10.999 5.04939C11.328 5.01673 11.6617 5 11.9992 5C16.4769 5 20.2672 7.94291 21.5414 12C21.2607 12.894 20.8577 13.7338 20.3522 14.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+                            <svg  onclick = "showPassword(this)" class =" absolute top-1/2 right-2 mt-1 -translate-y-1/2 h-8 w-8" id = "password_shown" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </div>
+                        
+                      
+                      
+
+                        {%  elif field.name == 'confirm_password' %}
+                        <div class="password-wrapper relative">
+                            <input type="password" placeholder="Confirm Password" name="{{field.name}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pr-10" id="id_confirm_password" />
+                           
+                            <svg onclick = "showPassword(this)" id = "confirm_password_hidden" class="absolute top-1/2 right-2 mt-1  -translate-y-1/2 h-8 w-8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path d="M2.99902 3L20.999 21M9.8433 9.91364C9.32066 10.4536 8.99902 11.1892 8.99902 12C8.99902 13.6569 10.3422 15 11.999 15C12.8215 15 13.5667 14.669 14.1086 14.133M6.49902 6.64715C4.59972 7.90034 3.15305 9.78394 2.45703 12C3.73128 16.0571 7.52159 19 11.9992 19C13.9881 19 15.8414 18.4194 17.3988 17.4184M10.999 5.04939C11.328 5.01673 11.6617 5 11.9992 5C16.4769 5 20.2672 7.94291 21.5414 12C21.2607 12.894 20.8577 13.7338 20.3522 14.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </svg>
+
+                            <svg  onclick = "showPassword(this)" class ="hidden absolute top-1/2 right-2 mt-1 -translate-y-1/2 h-8 w-8" id = "confirm_password_shown" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.0007 12C15.0007 13.6569 13.6576 15 12.0007 15C10.3439 15 9.00073 13.6569 9.00073 12C9.00073 10.3431 10.3439 9 12.0007 9C13.6576 9 15.0007 10.3431 15.0007 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.0012 5C7.52354 5 3.73326 7.94288 2.45898 12C3.73324 16.0571 7.52354 19 12.0012 19C16.4788 19 20.2691 16.0571 21.5434 12C20.2691 7.94291 16.4788 5 12.0012 5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+         
+                        </div>
+                        
+
+      
+
+                        {% else %}
+                        {{ field }}
+
+                        {% endif %}
+                {% endfor %}
+            </div>
+            <div class="flex items-center justify-between">
+                <button
+                    class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Sign Up
+                </button>
+            </div>
+            <div class="mt-4 text-center">
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+                    href="{% url 'login' %}">Already have an account? Sign In</a>
+            </div>
+        </form>
+    </div>
+    <div class="    items-center justify-center h-full bg-red-700 md:w-1/2 hidden md:flex ">
+        <img src="https://i.ibb.co/FxTWntq/mcm-logo.png" class = " "  alt="MCM Logo" />
+    </div>
+</div>
+    
+</div>
+
+<script>
+function validateForm() {
+    var password = document.getElementById('id_password').value;
+    var errorList = document.getElementById('errorList');
+    var confirmPassword = document.getElementById('id_confirm_password').value;
+    var regex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    errorList.innerHTML = '';
+    if (!regex.test(password)) {
+        errorList.appendChild(document.createElement('li')).innerHTML = 'Password must contain at least one number, one uppercase letter, one lowercase letter, one special character, and at least 8 characters.';
+            return false;
+    }
+
+    else if (password != confirmPassword) {
+        errorList.appendChild(document.createElement('li')).innerHTML = 'Passwords do not match.';
+        return false;
+    }
+}
+</script>
+
+
+<script>
+
+    const confirm_password_hidden = document.getElementById('confirm_password_hidden');
+    const confirm_password_shown = document.getElementById('confirm_password_shown');
+    const password_hidden = document.getElementById('password_hidden');
+    const password_shown = document.getElementById('password_shown');
+
+
+function showPassword(element) {
+
+    var passwordInput = element.previousElementSibling;
+
+    while (passwordInput && passwordInput.tagName.toLowerCase() !== 'input') {
+        passwordInput = passwordInput.previousElementSibling;
+    }
+    console.log("triggered")
+    console.log(passwordInput)
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        if (passwordInput.id === 'id_password') {
+            password_hidden.classList.add('hidden');
+            password_shown.classList.remove('hidden');
+        } else {
+            confirm_password_hidden.classList.add('hidden');
+            confirm_password_shown.classList.remove('hidden');
+        }
+
+    } else {
+        passwordInput.type = 'password';
+
+        if (passwordInput.id === 'id_password') {
+            password_hidden.classList.remove('hidden');
+            password_shown.classList.add('hidden');
+        } else {
+            confirm_password_hidden.classList.remove('hidden');
+            confirm_password_shown.classList.add('hidden');
+        }
+
+   
+    }
+}
+</script>
+
+{% endblock content %}

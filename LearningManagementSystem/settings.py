@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
+    'Course.apps.CourseConfig',
+    'Assignments.apps.AssignmentsConfig',
+    'Grades.apps.GradesConfig',
+    'StudentModule.apps.StudentmoduleConfig',
+    'UserAuthentication.apps.UserauthenticationConfig',
     'LandingPage.apps.LandingpageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+AUTH_USER_MODEL = 'UserAuthentication.Account'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

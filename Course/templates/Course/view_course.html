@@ -1,0 +1,79 @@
+<div id="dominiclass_enrolledCourses_lesson" class="h-screen w-full">
+  <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
+    <!--Body (Enrolled Classes)-->
+    <div
+      class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
+    >
+      <!--Header (Enrolled Classes)-->
+      <div
+        id="enrolledClasses_header"
+        class="border-2 border-[#C0BCBA] h-16 sm:h-14 w-full flex justify-start items-end space-x-6 bg-slate-50"
+      >
+        <a href=""
+          ><h1
+            class="h-8 text-lg sm:text-xl font-sans text-gray-500 underline decoration-4 underline-offset-8 decoration-[#DA6124] ml-10"
+          >
+            Lessons
+          </h1></a
+        >
+        <a href=""
+          ><h1
+            class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-4 sm:ml-8"
+          >
+            Activities
+          </h1></a
+        >
+      </div>
+
+      <!--Foreign Language Div-->
+      <div
+        id="courseDivHeader"
+        class="h-1/2 w-full flex justify-center items-center"
+      >
+        <div
+          class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg"
+        >
+          <!--Subject Name Div-->
+          <div class="h-full w-full flex justify-between items-end">
+            <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
+              <h1 class="text-lg sm:text-3xl font-bold">
+                {{course.course_name}}
+              </h1>
+              <h3 class="text-base sm:text-xl font-semibold">
+                {{course.course_code}}
+              </h3>
+            </div>
+            <img
+              class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10"
+              src="book1.png"
+              alt="book"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--Lessons Div (Containing Lesson Name Div)-->
+      <div
+        class="h-full w-full flex flex-col justify-start items-center space-y-4"
+      >
+        {% for material in course_materials %}
+        <!--Lesson Name Div-->
+        <div
+          id="lessonName1"
+          class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+        >
+          <div class="h-full w-[10%] flex justify-center items-center ml-2">
+            <img
+              class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+              src="lessonIcon.png"
+              alt="lessonIcon"
+            />
+          </div>
+          <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
