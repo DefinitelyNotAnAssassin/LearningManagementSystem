@@ -15,9 +15,10 @@
       id="assignmentsPage_body"
       class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
     >
-      <!--Assignment1-->
+      {% for activity in activities %}
+      <!--Assignment Item -->
       <div
-        id="assignment1"
+        id="{{activity.id}}"
         class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
       >
         <div class="h-full w-[10%] flex justify-center items-center ml-6">
@@ -28,68 +29,17 @@
           />
         </div>
         <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-          <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-          <h3 class="text-sm sm:text-base">Method of Research</h3>
-          <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-        </div>
-      </div>
-
-      <!--Assignment2-->
-      <div
-        id="assignment2"
-        class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
-      >
-        <div class="h-full w-[10%] flex justify-center items-center ml-6">
-          <img
-            class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
-            src="activityIcon.png"
-            alt="lessonIcon"
-          />
-        </div>
-        <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-          <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-          <h3 class="text-sm sm:text-base">Method of Research</h3>
-          <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-        </div>
-      </div>
-
-      <!--Assignment3-->
-      <div
-        id="assignment3"
-        class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
-      >
-        <div class="h-full w-[10%] flex justify-center items-center ml-6">
-          <img
-            class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
-            src="activityIcon.png"
-            alt="lessonIcon"
-          />
-        </div>
-        <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-          <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-          <h3 class="text-sm sm:text-base">Method of Research</h3>
-          <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-        </div>
-      </div>
-
-      <!--Assignment4-->
-      <div
-        id="assignment4"
-        class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
-      >
-        <div class="h-full w-[10%] flex justify-center items-center ml-6">
-          <img
-            class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
-            src="activityIcon.png"
-            alt="lessonIcon"
-          />
-        </div>
-        <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-          <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-          <h3 class="text-sm sm:text-base">Method of Research</h3>
-          <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
+          <h1 class="text-base sm:text-xl font-bold">
+            {{activity.activity_name}}
+          </h1>
+          <h3 class="text-sm sm:text-base">{{activity.course_code}}</h3>
+          <p class="text-sm sm:text-sm">
+            {{activity.activity_date}} | {{activity.activity_time}}
+          </p>
         </div>
       </div>
     </div>
+
+    {% endfor %}
   </div>
 </div>

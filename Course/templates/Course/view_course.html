@@ -26,29 +26,42 @@
       </div>
 
       <!--Foreign Language Div-->
+      <!-- Course / Subject Div-->
       <div
-        id="courseDivHeader"
-        class="h-1/2 w-full flex justify-center items-center"
+        id="foreignLanguage"
+        hx-get="{% url 'view course' course.id %}"
+        hx-target="#contentContainer"
+        hx-swap="transition:true"
+        class="h-1/5 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg"
       >
+        <!--Text Div-->
         <div
-          class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg"
+          class="h-full w-[85%] sm:w-[90%] flex justify-between items-center"
         >
-          <!--Subject Name Div-->
-          <div class="h-full w-full flex justify-between items-end">
-            <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
-              <h1 class="text-lg sm:text-3xl font-bold">
-                {{course.course_name}}
-              </h1>
-              <h3 class="text-base sm:text-xl font-semibold">
-                {{course.course_code}}
-              </h3>
-            </div>
-            <img
-              class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10"
-              src="book1.png"
-              alt="book"
-            />
+          <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
+            <h1 class="text-lg sm:text-3xl font-bold">
+              {{course.course_name}}
+            </h1>
+            <h3 class="text-base sm:text-xl font-semibold">
+              {{course.course_code}}
+            </h3>
+            <p class="text-sm sm:text-lg">{{course.course_description}}</p>
           </div>
+
+          <img
+            class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
+            src="book1.png"
+            alt="book"
+          />
+        </div>
+        <!--Meatball Menu Div-->
+        <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
+          <a href="#"
+            ><img
+              class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
+              src="mb1.png"
+              alt="book"
+          /></a>
         </div>
       </div>
 
@@ -60,7 +73,7 @@
         <!--Lesson Name Div-->
         <div
           id="lessonName1"
-          class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+          class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 my-10 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
         >
           <div class="h-full w-[10%] flex justify-center items-center ml-2">
             <img
@@ -69,7 +82,9 @@
               alt="lessonIcon"
             />
           </div>
-          <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
+          <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">
+            {{material.material_name}}
+          </h1>
         </div>
 
         {% endfor %}

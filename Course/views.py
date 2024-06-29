@@ -14,9 +14,9 @@ def enroll_course(request):
 
 
 def view_course(request, course_id):
-    print("Is this triggering?")
     course = Course.objects.get(id=course_id)
     course_materials = CourseMaterial.objects.filter(course_code_id=course.id)
+    print(course_materials)
     items = {
              'course': course,
              'course_materials': course_materials

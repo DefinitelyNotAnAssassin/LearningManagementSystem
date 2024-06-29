@@ -15,30 +15,17 @@
         <tbody
           class="border border-black text-left text-sm sm:text-base indent-6 bg-slate-50"
         >
+          {% for grade in course_grades %}
           <tr class="h-12">
-            <td id="foreignLanguage" class="border border-black">
-              Foreign Language
+            <td id="{{grade.course_name}}" class="border border-black">
+              {{grade.course_name}}
             </td>
-            <td id="foreignLanguage_grade" class="border border-black">
-              92.05
+            <td id="{{grade.id}}" class="border border-black">
+              {{grade.grade|floatformat:2}}
             </td>
           </tr>
-          <tr class="h-12">
-            <td id="methodOfResearch" class="border border-black">
-              Method of Research
-            </td>
-            <td id="methodOfResearch_grade" class="border border-black">
-              95.55
-            </td>
-          </tr>
-          <tr class="h-12">
-            <td id="networkManagement" class="border border-black">
-              Network Management
-            </td>
-            <td id="networkManagement_grade" class="border border-black">
-              97.15
-            </td>
-          </tr>
+
+          {% endfor %}
         </tbody>
       </table>
     </div>
