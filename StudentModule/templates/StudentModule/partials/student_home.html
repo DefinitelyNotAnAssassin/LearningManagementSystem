@@ -27,24 +27,17 @@
         <tbody
           class="border-black text-left text-sm sm:text-base indent-6 bg-slate-50"
         >
+          {% for course in courses %}
           <tr>
-            <td id="courseCode" class="border border-gray-300">GE201</td>
+            <td id="courseCode" class="border border-gray-300">
+              {{course.course_code}}
+            </td>
             <td id="courseName" class="border border-gray-300">
-              Foreign Language
+              {{ course.course_name }}
             </td>
           </tr>
-          <tr>
-            <td id="courseCode" class="border border-gray-300">IT200</td>
-            <td id="courseName" class="border border-gray-300">
-              Method of Research
-            </td>
-          </tr>
-          <tr>
-            <td id="courseCode" class="border border-gray-300">GE203</td>
-            <td id="courseName" class="border border-gray-300">
-              Network Management
-            </td>
-          </tr>
+
+          {% endfor %}
         </tbody>
       </table>
     </div>

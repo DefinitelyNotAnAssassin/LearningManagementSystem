@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from django.templatetags.static import static
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,12 +29,25 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'learningmanagementsystem.pythonanywhere.com',
     '127.0.0.1',
+    '192.168.1.6'
 ]
+
+UNFOLD = {
+    "SITE_TITLE": "LMS Admin",
+    "SITE_HEADER": "LMS Admin",
+    "INDEX_TITLE": "Dashboard",
+    "PRIMARY_COLOR": "white",  # Tailwind CSS color name
+}
+
+
+
+
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'pwa',
     'unfold',
     'Course.apps.CourseConfig',
     'Assignments.apps.AssignmentsConfig',
@@ -48,6 +62,62 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
+
+
+
+# PWA SETTINGS 
+
+
+
+PWA_APP_NAME = 'LMS'
+PWA_APP_DESCRIPTION = "Learning Management System"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/my_app_icon.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/images/my_apple_icon.png',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+PWA_APP_SHORTCUTS = [
+    {
+        'name': 'Shortcut',
+        'url': '/target',
+        'description': 'Shortcut to a page in my application'
+    }
+]
+PWA_APP_SCREENSHOTS = [
+    {
+      'src': '/static/images/icons/splash-750x1334.png',
+      'sizes': '750x1334',
+      "type": "image/png"
+    }
+]
+
+
+
+
 
 AUTH_USER_MODEL = 'UserAuthentication.Account'
 
@@ -130,6 +200,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

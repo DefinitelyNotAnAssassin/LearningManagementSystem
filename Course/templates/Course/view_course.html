@@ -16,7 +16,12 @@
             Lessons
           </h1></a
         >
-        <a href=""
+        <a
+          class="cursor-pointer"
+          hx-get="{% url 'course assignments' course.course_code %}"
+          hx-target="#contentContainer"
+          hx-swap="transition:true;"
+          hx-push-url="true"
           ><h1
             class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-4 sm:ml-8"
           >
@@ -28,11 +33,8 @@
       <!--Foreign Language Div-->
       <!-- Course / Subject Div-->
       <div
-        id="foreignLanguage"
-        hx-get="{% url 'view course' course.id %}"
-        hx-target="#contentContainer"
-        hx-swap="transition:true"
-        class="h-1/5 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg"
+        id="{{course.course_code}}"
+        class="py-12 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg"
       >
         <!--Text Div-->
         <div
@@ -50,7 +52,7 @@
 
           <img
             class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
-            src="book1.png"
+            src=""
             alt="book"
           />
         </div>
@@ -59,7 +61,7 @@
           <a href="#"
             ><img
               class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
-              src="mb1.png"
+              src=""
               alt="book"
           /></a>
         </div>
@@ -73,12 +75,16 @@
         <!--Lesson Name Div-->
         <div
           id="lessonName1"
-          class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 my-10 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+          hx-get="{% url 'view material' material.id %}"
+          hx-target="#contentContainer"
+          hx-swap="transition:true;"
+          hx-push-url="true"
+          class="py-10 w-[85%] sm:w-3/4 my-10 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
         >
           <div class="h-full w-[10%] flex justify-center items-center ml-2">
             <img
               class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
-              src="lessonIcon.png"
+              src=""
               alt="lessonIcon"
             />
           </div>

@@ -1,0 +1,64 @@
+{% extends "StudentModule/base/base.html" %}
+<!--  Course List -->
+
+{% block content %}
+<div id="dominiClass_myClassroom" class="h-full w-full border border-black">
+  <div class="flex flex-col h-screen w-full">
+    <!--Body-->
+    <div
+      class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3] space-y-10"
+    >
+      <!--Header (My Courses)-->
+      <div
+        id="myClassroom_header"
+        class="h-16 w-full flex justify-start items-center bg-[#FF6010] mb-12"
+      >
+        <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">
+          My Courses
+        </h1>
+      </div>
+
+      {% for course in courses %}
+
+      <!-- Course / Subject Div-->
+      <div
+        id="{{course.course_code}}"
+        hx-get="{% url 'view course' course.id %}"
+        hx-push-url="true"
+        hx-target="#contentContainer"
+        hx-swap="transition:true"
+        class="py-10 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg"
+      >
+        <!--Text Div-->
+        <div
+          class="h-full w-[85%] sm:w-[90%] flex justify-between items-center"
+        >
+          <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
+            <h1 class="text-lg font-bold">{{course.course_name}}</h1>
+            <h3 class="text-base font-semibold">{{course.course_code}}</h3>
+            <p class="text-sm">{{course.course_description}}</p>
+          </div>
+
+          <img
+            class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
+            src=""
+            alt="book"
+          />
+        </div>
+        <!--Meatball Menu Div-->
+        <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
+          <a href="#"
+            ><img
+              class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
+              src=""
+              alt="book"
+          /></a>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

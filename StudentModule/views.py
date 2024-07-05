@@ -1,10 +1,17 @@
 from django.shortcuts import render
+from Course.models import Course
 
 # Create your views here.
 
 
 def student_home(request):
     if request.META.get("HTTP_HX_REQUEST"):
-        return render(request, 'StudentModule/partials/student_home.html')
+        items = {
+            'courses': Course.objects.filter(enrolled_students=request.user)
+        }
+        return render(request, 'StudentModule/partials/student_home.html', context=items)
     else:   
-        return render(request, 'StudentModule/student_home.html')
+        items = {
+            'courses': Course.objects.filter(enrolled_students=request.user)
+        }
+        return render(request, 'StudentModule/student_home.html', context=items)

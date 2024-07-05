@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+  {% load pwa %}
   <head>
     <meta charset="UTF-8" />
+    {% progressive_web_app_meta %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -148,6 +150,7 @@
                 <span
                   hx-get="{% url 'student home' %}"
                   hx-swap="transition:true"
+                  hx-push-url="true"
                   hx-target="#contentContainer"
                   class="ms-3"
                   >Home Page</span
@@ -173,6 +176,7 @@
                 <span
                   hx-get="{% url 'enrolled course' %}"
                   hx-trigger="click"
+                  hx-push-url="true"
                   hx-target="#contentContainer"
                   hx-swap="transition:true"
                   class="flex-1 ms-3 whitespace-nowrap"
@@ -199,6 +203,7 @@
                 <span
                   hx-get="{% url 'assignments home' %}"
                   hx-swap="transition:true"
+                  hx-push-url="true"
                   hx-target="#contentContainer"
                   class="flex-1 ms-3 whitespace-nowrap"
                   >Assignments</span
@@ -224,6 +229,7 @@
                 <span
                   hx-get="{% url 'grades home' %}"
                   hx-swap="transition:true"
+                  hx-push-url="true"
                   hx-target="#contentContainer"
                   class="flex-1 ms-3 whitespace-nowrap"
                   >Grades</span
@@ -234,7 +240,10 @@
         </div>
       </aside>
 
-      <div class="w-full h-full bg-gray-200" id="contentContainer">
+      <div
+        class="w-full h-full bg-gray-200 absolute md:relative"
+        id="contentContainer"
+      >
         {% block content %} {% endblock content %}
       </div>
     </div>

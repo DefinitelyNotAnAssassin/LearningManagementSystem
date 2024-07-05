@@ -1,350 +1,561 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!--First page (blank)-->
+    <div id="dominiClass_blankHomePage" class="h-screen w-full bg-[#F6F4F3]">
+      <!--No content-->
+    </div>
 
-<!--First page (blank)-->
-        <div id="dominiClass_blankHomePage" class="h-screen w-full bg-[#F6F4F3]"> 
-            <!--No content-->
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!--Second Page (Home)-->
+    <div id="dominiClass_homePage" class="h-screen w-full">
+      <div class="flex flex-col h-screen w-full">
+        <div
+          id="homePage_header"
+          class="h-16 w-full flex justify-start items-center bg-[#FF6010]"
+        >
+          <!--Header (Home)-->
+          <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">Home</h1>
         </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------->
-<!--Second Page (Home)-->
-        <div id="dominiClass_homePage" class="h-screen w-full"> 
-            <div class="flex flex-col h-screen w-full">
+        <div class="h-full w-full flex bg-[#F6F4F3]">
+          <!--Table-->
 
-                <div id="homePage_header" class="h-16 w-full flex justify-start items-center bg-[#FF6010]"> <!--Header (Home)-->
-                    <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">Home</h1>
-                </div>
+          <table
+            id="courseTable"
+            class="w-3/4 h-1/4 border-collapse ml-12 sm:ml-24 mt-8 sm:mt-16"
+          >
+            <thead
+              class="h-12 text-left text-sm sm:text-base indent-6 bg-[#EBEBEC]"
+            >
+              <tr>
+                <th class="border border-gray-300">Courses Id</th>
+                <th class="border border-gray-300">Courses Name</th>
+              </tr>
+            </thead>
 
-                <div class="h-full w-full flex bg-[#F6F4F3]"><!--Table-->
+            <tbody
+              class="border-black text-left text-sm sm:text-base indent-6 bg-slate-50"
+            >
+              <tr>
+                <td id="courseCode" class="border border-gray-300">GE201</td>
+                <td id="courseName" class="border border-gray-300">
+                  Foreign Language
+                </td>
+              </tr>
+              <tr>
+                <td id="courseCode" class="border border-gray-300">IT200</td>
+                <td id="courseName" class="border border-gray-300">
+                  Method of Research
+                </td>
+              </tr>
+              <tr>
+                <td id="courseCode" class="border border-gray-300">GE203</td>
+                <td id="courseName" class="border border-gray-300">
+                  Network Management
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-                    <table id="courseTable" class="w-3/4 h-1/4 border-collapse ml-12 sm:ml-24 mt-8 sm:mt-16 ">
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!--Third Page (My Courses)-->
+    <div id="dominiClass_myClassroom" class="h-screen w-full">
+      <div class="flex flex-col h-screen w-full">
+        <!--Body-->
+        <div
+          class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3] space-y-10"
+        >
+          <!--Header (My Courses)-->
+          <div
+            id="myClassroom_header"
+            class="h-16 w-full flex justify-start items-center bg-[#FF6010] mb-12"
+          >
+            <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">
+              My Courses
+            </h1>
+          </div>
 
-                        <thead class="h-12 text-left text-sm sm:text-base indent-6 bg-[#EBEBEC]">
-                          <tr>
-                            <th class="border border-gray-300">Courses Id</th>
-                            <th class="border border-gray-300">Courses Name</th>
-                          </tr>
-                        </thead>
+          <!--Foreign Language Div-->
+          <div
+            id="foreignLanguage"
+            class="h-1/5 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg"
+          >
+            <!--Text Div-->
+            <div
+              class="h-full w-[85%] sm:w-[90%] flex justify-between items-center"
+            >
+              <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
+                <h1 class="text-lg sm:text-3xl font-bold">
+                  Foreign Language 2
+                </h1>
+                <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
+                <p class="text-sm sm:text-lg">Proctor</p>
+              </div>
 
-                        <tbody class="border-black text-left text-sm sm:text-base indent-6 bg-slate-50">
-                          <tr>
-                            <td id="courseCode" class="border border-gray-300">GE201</td>
-                            <td id="courseName" class="border border-gray-300">Foreign Language</td>
-                          </tr>
-                          <tr>
-                            <td id="courseCode" class="border border-gray-300">IT200</td>
-                            <td id="courseName" class="border border-gray-300">Method of Research</td>
-                          </tr>
-                          <tr>
-                            <td id="courseCode" class="border border-gray-300">GE203</td>
-                            <td id="courseName" class="border border-gray-300">Network Management</td>
-                          </tr>
-                        </tbody>
-                    </table>
-                </div>
+              <img
+                class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
+                src="book1.png"
+                alt="book"
+              />
             </div>
-        </div>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------->
-<!--Third Page (My Courses)-->
-        <div id="dominiClass_myClassroom" class="h-screen w-full"> 
-            <div class="flex flex-col h-screen w-full">
-
-                <!--Body-->
-                <div class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3] space-y-10">
-
-                    <!--Header (My Courses)-->
-                    <div id="myClassroom_header" class="h-16 w-full flex justify-start items-center bg-[#FF6010] mb-12"> 
-                        <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">My Courses</h1>
-                    </div>
-
-                    <!--Foreign Language Div-->
-                    <div id="foreignLanguage" class="h-1/5 w-3/4 flex  md:space-x-6 rounded-3xl bg-[#F1AE77] mt-14 overflow-hidden drop-shadow-lg">
-                        <!--Text Div-->
-                        <div class="h-full w-[85%] sm:w-[90%] flex justify-between items-center">
-                    
-                            <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
-                                <h1 class="text-lg sm:text-3xl font-bold">Foreign Language 2</h1>
-                                <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
-                                <p class="text-sm sm:text-lg">Proctor</p>
-                            </div>
-
-                            <img class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full" src="book1.png" alt="book">
-                        </div>
-                        <!--Meatball Menu Div-->
-                        <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
-                            <a href="#"><img class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2" src="mb1.png" alt="book"></a>
-                        </div> 
-                    </div>
-                    
-
-                    <!--MOR Div-->
-                    <div id="methodsOfResearch" class="h-1/5 w-3/4 flex  md:space-x-6 rounded-3xl bg-[#F6D269] mt-14 overflow-hidden drop-shadow-lg">
-                        <!--Text Div-->
-                        <div class="h-full w-[85%] sm:w-[90%] flex justify-between items-center">
-                    
-                            <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
-                                <h1 class="text-lg sm:text-3xl font-bold">Methods of Research</h1>
-                                <h3 class="text-base sm:text-xl font-semibold">IT200</h3>
-                                <p class="text-sm sm:text-lg">Proctor</p>
-                            </div>
-
-                            <img class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full" src="book2.png" alt="book">
-                        </div>
-                        <!--Meatball Menu Div-->
-                        <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
-                            <a href="#"><img class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2" src="mb2.png" alt="book"></a>
-                        </div> 
-                    </div>
-
-
-                    <!--NetMan Div-->
-                    <div id="netManagement" class="h-1/5 w-3/4 flex  md:space-x-6 rounded-3xl bg-[#CBBFAF] mt-14 overflow-hidden drop-shadow-lg">
-                        <!--Text Div-->
-                        <div class="h-full w-[85%] sm:w-[90%] flex justify-between items-center">
-                    
-                            <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
-                                <h1 class="text-lg sm:text-3xl font-bold">Network Management</h1>
-                                <h3 class="text-base sm:text-xl font-semibold">IT200</h3>
-                                <p class="text-sm sm:text-lg">Proctor</p>
-                            </div>
-
-                            <img class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full" src="book3.png" alt="book">
-                        </div>
-                        <!--Meatball Menu Div-->
-                        <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
-                            <a href="#"><img class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2" src="mb3.png" alt="book"></a>
-                        </div> 
-                    </div>
-
-                </div>
+            <!--Meatball Menu Div-->
+            <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
+              <a href="#"
+                ><img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
+                  src=""
+                  alt="book"
+              /></a>
             </div>
-        </div>
+          </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------->
-<!--Fourth Page (Enrolled Courses "Lesson")-->
-        <div id="dominiclass_enrolledCourses_lesson" class="h-screen w-full">
-            <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
+          <!--MOR Div-->
+          <div
+            id="methodsOfResearch"
+            class="h-1/5 w-3/4 flex md:space-x-6 rounded-3xl bg-[#F6D269] mt-14 overflow-hidden drop-shadow-lg"
+          >
+            <!--Text Div-->
+            <div
+              class="h-full w-[85%] sm:w-[90%] flex justify-between items-center"
+            >
+              <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
+                <h1 class="text-lg sm:text-3xl font-bold">
+                  Methods of Research
+                </h1>
+                <h3 class="text-base sm:text-xl font-semibold">IT200</h3>
+                <p class="text-sm sm:text-lg">Proctor</p>
+              </div>
 
-                <!--Body (Enrolled Classes)-->
-                <div class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]">
-
-                    <!--Header (Enrolled Classes)-->
-                    <div id="enrolledClasses_header" class="border-2 border-[#C0BCBA] h-16 sm:h-14 w-full flex justify-start items-end space-x-6 bg-slate-50">
-                        <a href=""><h1 class="h-8 text-lg sm:text-xl font-sans text-gray-500 underline decoration-4 underline-offset-8 decoration-[#DA6124]  ml-10">Lessons</h1></a>
-                        <a href=""><h1 class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-4 sm:ml-8">Activities</h1></a>
-                    </div>
-
-                    <!--Foreign Language Div-->
-                    <div id="courseDivHeader" class="h-1/2 w-full flex justify-center items-center ">
-                        <div class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg">
-                            <!--Subject Name Div-->
-                            <div class="h-full w-full flex justify-between items-end">
-                                <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
-                                    <h1 class="text-lg sm:text-3xl font-bold">Foreign Language 2</h1>
-                                    <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
-                                </div>
-                                <img class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10" src="book1.png" alt="book">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!--Lessons Div (Containing Lesson Name Div)-->
-                    <div class="h-full w-full flex flex-col justify-start items-center space-y-4 ">
-
-                        <!--Lesson Name Div-->
-                        <div id="lessonName1" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                            <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                                <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="lessonIcon.png" alt="lessonIcon">
-                            </div>
-                            <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
-                        </div>
-
-                        <!--Lesson Name Div-->
-                        <div id="lessonName2" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                            <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                                <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="lessonIcon.png" alt="lessonIcon">
-                            </div>
-                            <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
-                        </div>
-
-                        <!--Lesson Name Div-->
-                        <div id="lessonName3" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                            <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                                <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="lessonIcon.png" alt="lessonIcon">
-                            </div>
-                            <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
-                        </div>
-                        
-                    </div>
-                </div>
+              <img
+                class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
+                src="book2.png"
+                alt="book"
+              />
             </div>
+            <!--Meatball Menu Div-->
+            <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
+              <a href="#"
+                ><img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
+                  src="mb2.png"
+                  alt="book"
+              /></a>
+            </div>
+          </div>
+
+          <!--NetMan Div-->
+          <div
+            id="netManagement"
+            class="h-1/5 w-3/4 flex md:space-x-6 rounded-3xl bg-[#CBBFAF] mt-14 overflow-hidden drop-shadow-lg"
+          >
+            <!--Text Div-->
+            <div
+              class="h-full w-[85%] sm:w-[90%] flex justify-between items-center"
+            >
+              <div class="space-y-2 text-slate-50 ml-2 sm:ml-14">
+                <h1 class="text-lg sm:text-3xl font-bold">
+                  Network Management
+                </h1>
+                <h3 class="text-base sm:text-xl font-semibold">IT200</h3>
+                <p class="text-sm sm:text-lg">Proctor</p>
+              </div>
+
+              <img
+                class="object-cover max-w-24 max-h-24 sm:max-w-full sm:max-h-full"
+                src="book3.png"
+                alt="book"
+              />
+            </div>
+            <!--Meatball Menu Div-->
+            <div class="h-1/4 w-10 md:w-16 flex justify-center items-start">
+              <a href="#"
+                ><img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-full sm:max-h-full mt-2"
+                  src="mb3.png"
+                  alt="book"
+              /></a>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------->
-
-<!--Fifth Page (Enrolled Courses "Activities")-->
-<div id="dominiclass_enrolledCourses_activities" class="h-screen w-full">
-    <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
-
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!--Fourth Page (Enrolled Courses "Lesson")-->
+    <div id="dominiclass_enrolledCourses_lesson" class="h-screen w-full">
+      <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
         <!--Body (Enrolled Classes)-->
-        <div class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]">
+        <div
+          class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
+        >
+          <!--Header (Enrolled Classes)-->
+          <div
+            id="enrolledClasses_header"
+            class="border-2 border-[#C0BCBA] h-16 sm:h-14 w-full flex justify-start items-end space-x-6 bg-slate-50"
+          >
+            <a href=""
+              ><h1
+                class="h-8 text-lg sm:text-xl font-sans text-gray-500 underline decoration-4 underline-offset-8 decoration-[#DA6124] ml-10"
+              >
+                Lessons
+              </h1></a
+            >
+            <a href=""
+              ><h1
+                class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-4 sm:ml-8"
+              >
+                Activities
+              </h1></a
+            >
+          </div>
 
-            <!--Header (Enrolled Classes)-->
-            <div id="enrolledClasses_header" class="border-2 border-[#C0BCBA] h-16 sm:h-14 w-full flex justify-start items-end space-x-6 bg-slate-50">
-                <a href=""><h1 class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-10">Lessons</h1></a>
-                <a href=""><h1 class="h-8 text-lg sm:text-xl font-sans text-gray-500 underline decoration-4 underline-offset-8 decoration-[#DA6124] ml-4 sm:ml-8">Activities</h1></a>
+          <!--Foreign Language Div-->
+          <div
+            id="courseDivHeader"
+            class="h-1/2 w-full flex justify-center items-center"
+          >
+            <div
+              class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg"
+            >
+              <!--Subject Name Div-->
+              <div class="h-full w-full flex justify-between items-end">
+                <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
+                  <h1 class="text-lg sm:text-3xl font-bold">
+                    Foreign Language 2
+                  </h1>
+                  <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
+                </div>
+                <img
+                  class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10"
+                  src="book1.png"
+                  alt="book"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!--Lessons Div (Containing Lesson Name Div)-->
+          <div
+            class="h-full w-full flex flex-col justify-start items-center space-y-4"
+          >
+            <!--Lesson Name Div-->
+            <div
+              id="lessonName1"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="lessonIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
             </div>
 
-            <!--Foreign Language Div-->
-            <div id="CourseDivHeader" class="h-1/2 w-full flex justify-center items-center ">
-                <div class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg">
-                    <!--Subject Name Div-->
-                    <div class="h-full w-full flex justify-between items-end">
-                        <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
-                            <h1 class="text-lg sm:text-3xl font-bold">Foreign Language 2</h1>
-                            <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
-                        </div>
-                        <img class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10" src="book1.png" alt="book">
-                    </div>
-                </div>
+            <!--Lesson Name Div-->
+            <div
+              id="lessonName2"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="lessonIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
             </div>
-            
-            <!--Activities Div (Containing Activity Divs)-->
-            <div class="h-full w-full flex flex-col justify-start items-center space-y-4 ">
 
-                <!--Activities Name Div-->
-                <div id="activityName1" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                        <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
-                </div>
-
-                <!--Activities Name Div-->
-                <div id="activityName2" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                        <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
-                </div>
-
-                <!--Activities Name Div-->
-                <div id="activityName3" class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-2">
-                        <img class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
-                </div>
-                
+            <!--Lesson Name Div-->
+            <div
+              id="lessonName3"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="lessonIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Lesson Name</h1>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-
-<!------------------------------------------------------------------------------------------------------------------------------------------->
-
-<!--Sixth Page (Assignments)-->
-    <div id="dominiClass_assignmentsPage" class="h-screen w-full"> 
-        <div class="flex flex-col h-screen w-full">
-
-            <!--Header (Assignments)-->
-                <div id="assignmentsPage_header" class="h-16 w-full flex justify-start items-center bg-[#FF6010]"> 
-                    <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">Assignments</h1>
-                 </div>
-
-            <!--Body (Assignments)-->
-            <div id="assignmentsPage_body" class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]">
-
-                <!--Assignment1-->
-                <div id="assignment1" class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-6">
-                        <img class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-                        <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-                        <h3 class="text-sm sm:text-base">Method of Research</h3>
-                        <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-                    </div>
-                </div>
-
-                <!--Assignment2-->
-                <div id="assignment2" class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-6">
-                        <img class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-                        <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-                        <h3 class="text-sm sm:text-base">Method of Research</h3>
-                        <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-                    </div>
-                </div>
-
-                <!--Assignment3-->
-                <div id="assignment3" class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-6">
-                        <img class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-                        <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-                        <h3 class="text-sm sm:text-base">Method of Research</h3>
-                        <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-                    </div>
-                </div>
-
-                <!--Assignment4-->
-                <div id="assignment4" class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8">
-                    <div class="h-full w-[10%] flex justify-center items-center ml-6">
-                        <img class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]" src="activityIcon.png" alt="lessonIcon">
-                    </div>
-                    <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
-                        <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
-                        <h3 class="text-sm sm:text-base">Method of Research</h3>
-                        <p class="text-sm sm:text-sm">Deadline: June 2, 2024 | 11:59 PM</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+      </div>
     </div>
 
-<!------------------------------------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
 
-<!--Seventh Page (Grades)-->
-    <div id="dominiClass_gradesPage" class="h-screen w-full"> 
-        <div class="flex flex-col h-screen w-full">
+    <!--Fifth Page (Enrolled Courses "Activities")-->
+    <div id="dominiclass_enrolledCourses_activities" class="h-screen w-full">
+      <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
+        <!--Body (Enrolled Classes)-->
+        <div
+          class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
+        >
+          <!--Header (Enrolled Classes)-->
+          <div
+            id="enrolledClasses_header"
+            class="border-2 border-[#C0BCBA] h-16 sm:h-14 w-full flex justify-start items-end space-x-6 bg-slate-50"
+          >
+            <a href=""
+              ><h1 class="h-8 text-lg sm:text-xl font-sans text-gray-500 ml-10">
+                Lessons
+              </h1></a
+            >
+            <a href=""
+              ><h1
+                class="h-8 text-lg sm:text-xl font-sans text-gray-500 underline decoration-4 underline-offset-8 decoration-[#DA6124] ml-4 sm:ml-8"
+              >
+                Activities
+              </h1></a
+            >
+          </div>
 
-            <!--Header (Assignments)-->
-            <div id="gradesPage_header" class="h-16 w-full flex justify-start items-center bg-[#FF6010]"> 
-                <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">Grades</h1>
+          <!--Foreign Language Div-->
+          <div
+            id="CourseDivHeader"
+            class="h-1/2 w-full flex justify-center items-center"
+          >
+            <div
+              class="h-3/4 w-[85%] sm:w-3/4 flex md:space-x-6 rounded-3xl bg-[#F1AE77] overflow-hidden drop-shadow-lg"
+            >
+              <!--Subject Name Div-->
+              <div class="h-full w-full flex justify-between items-end">
+                <div class="space-y-2 text-slate-50 ml-2 sm:ml-14 mb-10">
+                  <h1 class="text-lg sm:text-3xl font-bold">
+                    Foreign Language 2
+                  </h1>
+                  <h3 class="text-base sm:text-xl font-semibold">GE201</h3>
+                </div>
+                <img
+                  class="object-cover max-w-24 max-h-24 sm:max-w-[70%] sm:max-h-[70%] mr-10"
+                  src="book1.png"
+                  alt="book"
+                />
+              </div>
             </div>
-                
-            <div class="h-full w-full flex justify-center bg-[#F6F4F3]">
-                <table class="w-[90%] sm:w-3/4 h-1/4 border-collapse border-separate border-spacing-y-3 mt-20">
-                    <tbody class="border border-black text-left text-sm sm:text-base indent-6 bg-slate-50">
-                    <tr class="h-12">
-                        <td id="foreignLanguage" class="border border-black">Foreign Language</td>
-                        <td id="foreignLanguage_grade" class="border border-black">92.05</td>
-                     </tr>
-                    <tr class="h-12">
-                        <td id="methodOfResearch" class="border border-black">Method of Research</td>
-                        <td id="methodOfResearch_grade" class="border border-black">95.55</td>
-                    </tr>
-                    <tr class="h-12">
-                        <td id="networkManagement" class="border border-black">Network Management</td>
-                        <td id="networkManagement_grade" class="border border-black">97.15</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            
+          </div>
 
+          <!--Activities Div (Containing Activity Divs)-->
+          <div
+            class="h-full w-full flex flex-col justify-start items-center space-y-4"
+          >
+            <!--Activities Name Div-->
+            <div
+              id="activityName1"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="activityIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
+            </div>
+
+            <!--Activities Name Div-->
+            <div
+              id="activityName2"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="activityIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
+            </div>
+
+            <!--Activities Name Div-->
+            <div
+              id="activityName3"
+              class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+            >
+              <div class="h-full w-[10%] flex justify-center items-center ml-2">
+                <img
+                  class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+                  src="activityIcon.png"
+                  alt="lessonIcon"
+                />
+              </div>
+              <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">Activity Name</h1>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </body>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!--Sixth Page (Assignments)-->
+    <div id="dominiClass_assignmentsPage" class="h-screen w-full">
+      <div class="flex flex-col h-screen w-full">
+        <!--Header (Assignments)-->
+        <div
+          id="assignmentsPage_header"
+          class="h-16 w-full flex justify-start items-center bg-[#FF6010]"
+        >
+          <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">
+            Assignments
+          </h1>
+        </div>
+
+        <!--Body (Assignments)-->
+        <div
+          id="assignmentsPage_body"
+          class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
+        >
+          <!--Assignment1-->
+          <div
+            id="assignment1"
+            class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
+          >
+            <div class="h-full w-[10%] flex justify-center items-center ml-6">
+              <img
+                class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
+                src="activityIcon.png"
+                alt="lessonIcon"
+              />
+            </div>
+            <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
+              <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
+              <h3 class="text-sm sm:text-base">Method of Research</h3>
+              <p class="text-sm sm:text-sm">
+                Deadline: June 2, 2024 | 11:59 PM
+              </p>
+            </div>
+          </div>
+
+          <!--Assignment2-->
+          <div
+            id="assignment2"
+            class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
+          >
+            <div class="h-full w-[10%] flex justify-center items-center ml-6">
+              <img
+                class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
+                src="activityIcon.png"
+                alt="lessonIcon"
+              />
+            </div>
+            <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
+              <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
+              <h3 class="text-sm sm:text-base">Method of Research</h3>
+              <p class="text-sm sm:text-sm">
+                Deadline: June 2, 2024 | 11:59 PM
+              </p>
+            </div>
+          </div>
+
+          <!--Assignment3-->
+          <div
+            id="assignment3"
+            class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
+          >
+            <div class="h-full w-[10%] flex justify-center items-center ml-6">
+              <img
+                class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
+                src="activityIcon.png"
+                alt="lessonIcon"
+              />
+            </div>
+            <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
+              <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
+              <h3 class="text-sm sm:text-base">Method of Research</h3>
+              <p class="text-sm sm:text-sm">
+                Deadline: June 2, 2024 | 11:59 PM
+              </p>
+            </div>
+          </div>
+
+          <!--Assignment4-->
+          <div
+            id="assignment4"
+            class="h-[16%] w-[85%] sm:w-3/4 flex rounded-3xl border-2 border-[#A7A6A5] mt-8"
+          >
+            <div class="h-full w-[10%] flex justify-center items-center ml-6">
+              <img
+                class="object-cover max-w-16 max-h-10 sm:max-w-[70%] sm:max-h-[70%]"
+                src="activityIcon.png"
+                alt="lessonIcon"
+              />
+            </div>
+            <div class="text-black ml-6 sm:ml-7 mt-5 sm:mt-3">
+              <h1 class="text-base sm:text-xl font-bold">Activity Name</h1>
+              <h3 class="text-sm sm:text-base">Method of Research</h3>
+              <p class="text-sm sm:text-sm">
+                Deadline: June 2, 2024 | 11:59 PM
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!--Seventh Page (Grades)-->
+    <div id="dominiClass_gradesPage" class="h-screen w-full">
+      <div class="flex flex-col h-screen w-full">
+        <!--Header (Assignments)-->
+        <div
+          id="gradesPage_header"
+          class="h-16 w-full flex justify-start items-center bg-[#FF6010]"
+        >
+          <h1 class="text-xl font-sans font-bold text-slate-50 ml-8">Grades</h1>
+        </div>
+
+        <div class="h-full w-full flex justify-center bg-[#F6F4F3]">
+          <table
+            class="w-[90%] sm:w-3/4 h-1/4 border-collapse border-separate border-spacing-y-3 mt-20"
+          >
+            <tbody
+              class="border border-black text-left text-sm sm:text-base indent-6 bg-slate-50"
+            >
+              <tr class="h-12">
+                <td id="foreignLanguage" class="border border-black">
+                  Foreign Language
+                </td>
+                <td id="foreignLanguage_grade" class="border border-black">
+                  92.05
+                </td>
+              </tr>
+              <tr class="h-12">
+                <td id="methodOfResearch" class="border border-black">
+                  Method of Research
+                </td>
+                <td id="methodOfResearch_grade" class="border border-black">
+                  95.55
+                </td>
+              </tr>
+              <tr class="h-12">
+                <td id="networkManagement" class="border border-black">
+                  Network Management
+                </td>
+                <td id="networkManagement_grade" class="border border-black">
+                  97.15
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,45 @@
+<div id="dominiclass_enrolledCourses_lesson" class="h-screen w-full">
+  <div class="h-screen w-full flex flex-col bg-[#F6F4F3]">
+    <!--Body (Enrolled Classes)-->
+    <div
+      class="h-full w-full flex flex-col justify-start items-center bg-[#F6F4F3]"
+    >
+      <!--Foreign Language Div-->
+      <!-- Course / Subject Div-->
+
+      <!--Lessons Div (Containing Lesson Name Div)-->
+      <div
+        class="h-full w-full flex flex-col justify-start items-center space-y-4"
+      >
+        <!--Lesson Name Div-->
+        <div
+          id="lessonName1"
+          hx-get="{% url 'view material' material.id %}"
+          hx-target="#contentContainer"
+          hx-swap="transition:true;"
+          hx-push-url="true"
+          class="h-[12%] sm:h-[22%] w-[85%] sm:w-3/4 my-10 flex items-center rounded-full border-2 border-[#A2A1A0] overflow-hidden"
+        >
+          <div class="h-full w-[10%] flex justify-center items-center ml-2">
+            <img
+              class="object-cover max-w-6 max-h-6 sm:max-w-[70%] sm:max-h-[70%]"
+              src=""
+              alt="lessonIcon"
+            />
+          </div>
+          <h1 class="text-4xl sm:text-2xl text-[#2E2D2D]">
+            {{material.material_name}}
+          </h1>
+        </div>
+
+        <div
+          class="w-3/4 h-1/2 bg-gray-200 rounded rounded-lg flex items-center justify-center"
+        >
+          <h1 class="text-xl sm:text-2xl text-[#2E2D2D]">
+            {{material.material_description}}
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
