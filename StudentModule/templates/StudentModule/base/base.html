@@ -74,37 +74,20 @@
                 id="dropdown-user"
               >
                 <div class="px-4 py-3" role="none">
-                  <p class="text-sm text-gray-900" role="none">Admin</p>
+                  <p class="text-sm text-gray-900" role="none">
+                    {{request.user.first_name}} {{request.user.last_name}}
+                  </p>
                   <p
                     class="text-sm font-medium text-gray-900 truncate"
                     role="none"
                   >
-                    admin
+                    {{request.user.username}}
                   </p>
                 </div>
                 <ul class="py-1" role="none">
                   <li>
                     <a
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                      >Home Page</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      hx-get="{% url 'enrolled course' %}"
-                      hx-trigger="click"
-                      href="#"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      role="menuitem"
-                      >My Classroom</a
-                    >
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
+                      href="{% url 'logout' %}"
                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       role="menuitem"
                       >Sign out</a

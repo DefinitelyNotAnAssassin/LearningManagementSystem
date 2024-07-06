@@ -34,4 +34,9 @@ def register(request):
         if form.is_valid():
             form.save()
             return render(request, 'UserAuthentication/signin.html')
+        
+        
+def logout(request):
+    logout_user(request)
+    return redirect('login')
    
